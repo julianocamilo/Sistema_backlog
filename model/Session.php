@@ -6,7 +6,7 @@
  * Time: 20:56
  */
 
-class Session extends SessionHandler{
+class Session{
     private static $session_id;
     private static $session_name;
 
@@ -30,7 +30,8 @@ class Session extends SessionHandler{
         if (self::session_exist)
             self::remove_session();
         self::initialize();
-        $_SESSION[$name]= array();
+        self::$session_name = $name;
+        $_SESSION[self::$session_name]= array();
     }
 
     public static function insert_value(array $value) {
