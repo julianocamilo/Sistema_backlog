@@ -82,4 +82,6 @@ class Usuario implements ITemplate {
     public function setTipoPermissao($tipo_permissao) {
         $this->tipo_permissao = $tipo_permissao;
     }
+
+
 }

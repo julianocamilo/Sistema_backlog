@@ -1,3 +1,8 @@
+<?
+include_once "../model/Session.php";
+if (!Session::session_exist())
+    header("Location: index.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +46,7 @@
             <ul class="nav navbar-nav navbar-right">
              
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> Fernando <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> <? echo Session::get_session()["user"]; ?> <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a href="#">
@@ -74,7 +79,7 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li>
-							<a href="home.html">
+							<a href="home.php">
 								<i class="icon-bar-chart"></i>
 								<span class="hidden-tablet"> Chamados</span>
 							</a>
